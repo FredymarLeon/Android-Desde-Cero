@@ -1,9 +1,7 @@
 package com.fleon.androiddesdecero.primerapp
 
-import android.bluetooth.BluetoothDevice.EXTRA_NAME
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -23,16 +21,17 @@ class PrimerAppActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btnStart = findViewById<AppCompatButton>(R.id.btnStart)
+        val btnStart = findViewById<AppCompatButton>(R.id.btnStart)     //Engancho mi botton
         val editTextName = findViewById<AppCompatEditText>(R.id.editTextName)
 
-        btnStart.setOnClickListener {
-            val name = editTextName.text.toString()
+        btnStart.setOnClickListener {   //Cuando clique el boton, haz lo siguiente:
+            //Log.i("Fredymar, "Botón clicado")
+            val name = editTextName.text.toString()     //Cuando el boton sea clicado, voy a mostrar un mensaje. lo que está em name me va a retornar el texto.
 
             if(name.isNotEmpty()) {
-                val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra("Extra_NAME", name)
-                startActivity(intent)
+                val intent = Intent(this, SegundaActivity::class.java)   //Abre la otra Activity:
+                intent.putExtra("ACTION_NAME", name) //Envio del nombre que es ingresado en la primera activiti para  la segunda.
+                startActivity(intent)   //Abre esa activity que esta aqui.
             }
         }
     }

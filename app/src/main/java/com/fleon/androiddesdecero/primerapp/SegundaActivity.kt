@@ -8,11 +8,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.fleon.androiddesdecero.R
 
-class ResultActivity : AppCompatActivity() {
+class SegundaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_result)
+        setContentView(R.layout.activity_segunda)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -21,7 +21,7 @@ class ResultActivity : AppCompatActivity() {
 
         val textViewResult = findViewById<TextView>(R.id.textViewResult)
 
-        val name: String = intent.extras?.getString("EXTRA_NAME").orEmpty()
+        val name: String = intent.extras?.getString("ACTION_NAME").orEmpty()
         textViewResult.text = "Hola, $name"
     }
 }
