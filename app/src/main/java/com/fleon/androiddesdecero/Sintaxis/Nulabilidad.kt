@@ -1,4 +1,4 @@
-package com.fleon.androiddesdecero
+package com.fleon.androiddesdecero.Sintaxis
 
 fun main() {
     var name: String = "Fredymar"

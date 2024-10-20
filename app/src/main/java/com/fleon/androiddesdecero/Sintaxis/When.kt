@@ -1,8 +1,6 @@
 @file:Suppress("DUPLICATE_LABEL_IN_WHEN")
 
-package com.fleon.androiddesdecero
-
-import androidx.lifecycle.viewmodel.viewModelFactory
+package com.fleon.androiddesdecero.Sintaxis
 
 fun main() {
     getMeses(4)
